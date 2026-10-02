@@ -1,0 +1,15 @@
+# DemandPulse AI - Core Dependencies
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
+
+# Jupyter / Development
+jupyter
+ipykernel
+
+# Optional: Web App / Dashboard
+streamlit
+flask
