@@ -1,0 +1,82 @@
+# ================================
+# DemandPulse AI - Git Ignore
+# ================================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large datasets
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+
+# Local data folders
+data/raw/
+data/processed/
+
+# Trained models / generated artifacts
+*.pkl
+*.joblib
+*.h5
+*.keras
+*.model
+
+# Keep README files inside ignored folders
+!data/**/README.md
+!models/**/README.md
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Flask
+instance/
+
+# Coverage / testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Local output files
+outputs/
+results/
+reports/generated/
