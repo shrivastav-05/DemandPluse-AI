@@ -6,4 +6,4 @@ The project is being developed step-by-step, including data generation, feature 
 
 🔜 **Live Demo: Coming Soon**
 
-More features and improvements will be added as development progresses.
+More features and improvements will be added as development progresses..
