@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine Failure Predictor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Machine Failure Predictor</h1>
+      <p>Enter machine details to predict failure.</p>
+
+      <form action="/predict" method="POST">
+        <label>Machine Type</label>
+        <select name="type" required>
+          <option value="L">L</option>
+          <option value="M">M</option>
+          <option value="H">H</option>
+        </select>
+
+        <label>Air Temperature (K)</label>
+        <input type="number" name="air_temp" step="any" required />
+
+        <label>Process Temperature (K)</label>
+        <input type="number" name="process_temp" step="any" required />
+
+        <label>Rotational Speed (rpm)</label>
+        <input type="number" name="rotational_speed" required />
+
+        <label>Torque (Nm)</label>
+        <input type="number" name="torque" step="any" required />
+
+        <label>Tool Wear (min)</label>
+        <input type="number" name="tool_wear" required />
+
+        <button type="submit">Predict</button>
+      </form>
+    </main>
+  </body>
+</html>
