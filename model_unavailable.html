@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choose Prediction Model | Machine Failure Predictor</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="model-choice-container">
+        <h1>Choose Your Prediction Method</h1>
+
+        <p>Select how you want to predict machine failure.</p>
+
+        {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+
+        <div class="model-options">
+          <!-- EXISTING MODEL -->
+          <div class="model-card">
+            <h2>Existing Model</h2>
+
+            <p>
+              Use the previously trained machine learning model saved from your
+              training notebook.
+            </p>
+
+            <form action="{{ url_for('existing_model') }}" method="POST">
+              <input
+                type="hidden"
+                name="machine_type"
+                value="{{ machine_type or Type or type or 'M' }}"
+              />
+
+              <input
+                type="hidden"
+                name="air_temperature"
+                value="{{ air_temperature or Air_temperature or air_temp or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="process_temperature"
+                value="{{ process_temperature or Process_temperature or process_temp or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="rotational_speed"
+                value="{{ rotational_speed or Rotational_speed or rotational_speed_rpm or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="torque"
+                value="{{ torque or Torque or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="tool_wear"
+                value="{{ tool_wear or Tool_wear or tool_wear_min or '' }}"
+              />
+
+              <button type="submit" class="btn">Use Existing Model</button>
+            </form>
+          </div>
+
+          <!-- TRAIN NEW MODEL -->
+          <div class="model-card">
+            <h2>Train New Model</h2>
+
+            <p>
+              Configure the data split and cross-validation settings, then train
+              a new model.
+            </p>
+
+            <form action="{{ url_for('train') }}" method="POST">
+              <input
+                type="hidden"
+                name="machine_type"
+                value="{{ machine_type or Type or type or 'M' }}"
+              />
+
+              <input
+                type="hidden"
+                name="air_temperature"
+                value="{{ air_temperature or Air_temperature or air_temp or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="process_temperature"
+                value="{{ process_temperature or Process_temperature or process_temp or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="rotational_speed"
+                value="{{ rotational_speed or Rotational_speed or rotational_speed_rpm or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="torque"
+                value="{{ torque or Torque or '' }}"
+              />
+
+              <input
+                type="hidden"
+                name="tool_wear"
+                value="{{ tool_wear or Tool_wear or tool_wear_min or '' }}"
+              />
+
+              <button type="submit" class="btn">Train New Model</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- HOME BUTTON -->
+        <div class="navigation-buttons">
+          <a href="{{ url_for('index') }}" class="btn"> Back to Home </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

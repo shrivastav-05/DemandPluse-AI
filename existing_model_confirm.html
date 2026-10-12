@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Existing Model Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background: #f3f6fb;
+        color: #202b3c;
+      }
+
+      .card {
+        width: min(540px, 100%);
+        padding: 34px;
+        text-align: center;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        box-shadow: 0 10px 32px rgba(25, 50, 90, 0.09);
+      }
+
+      .icon {
+        font-size: 48px;
+      }
+      h1 {
+        color: #183b70;
+      }
+
+      p {
+        color: #586477;
+        line-height: 1.8;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        margin-top: 13px;
+        border: 0;
+        border-radius: 9px;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .yes {
+        background: #16834a;
+      }
+      .no {
+        background: #5b6472;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="card">
+      <div class="icon" aria-hidden="true">✅</div>
+      <h1>Existing Model Available</h1>
+
+      <p>
+        A saved model is available. Do you want to use it to predict the machine
+        failure result using the inputs you already entered?
+      </p>
+
+      <form action="{{ url_for('confirm_existing_prediction') }}" method="POST">
+        <input type="hidden" name="machine_type" value="{{ machine_type }}" />
+        <input type="hidden" name="air_temp" value="{{ air_temp }}" />
+        <input type="hidden" name="process_temp" value="{{ process_temp }}" />
+        <input
+          type="hidden"
+          name="rotational_speed"
+          value="{{ rotational_speed }}"
+        />
+        <input type="hidden" name="torque" value="{{ torque }}" />
+        <input type="hidden" name="tool_wear" value="{{ tool_wear }}" />
+
+        <button type="submit" class="btn yes">Yes, Predict Now</button>
+      </form>
+
+      <form action="{{ url_for('model_choice') }}" method="POST">
+        <input type="hidden" name="machine_type" value="{{ machine_type }}" />
+        <input type="hidden" name="air_temp" value="{{ air_temp }}" />
+        <input type="hidden" name="process_temp" value="{{ process_temp }}" />
+        <input
+          type="hidden"
+          name="rotational_speed"
+          value="{{ rotational_speed }}"
+        />
+        <input type="hidden" name="torque" value="{{ torque }}" />
+        <input type="hidden" name="tool_wear" value="{{ tool_wear }}" />
+
+        <button type="submit" class="btn no">No, Go Back</button>
+      </form>
+    </main>
+  </body>
+</html>
