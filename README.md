@@ -1,6 +1,6 @@
 ## Project Status
 
-# ** DemandPulse AI is currently under active development.** As this is a large and complex project, it will take some time to complete. Thank you for your patience and understanding. Stay tuned for updates!**
+**DemandPulse AI is currently under active development, As this is a large and complex project, it will take some time to complete. Thank you for your patience and understanding. Stay tuned for updates!**
 
 The project is being developed step-by-step, including data generation, feature engineering, machine learning model development, evaluation, and deployment.
 
