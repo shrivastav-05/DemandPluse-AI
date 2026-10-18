@@ -6,4 +6,4 @@ The project is being developed step-by-step, including data generation, feature 
 
 More features and improvements will be added as development progresses..
 
-# “Estimated project completion date: November 15–23, 2026”
+# “Estimated project completion date: November 15–20, 2026”
